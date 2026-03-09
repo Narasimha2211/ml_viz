@@ -1,0 +1,17 @@
+# Real-time ML Training Visualization Tool
+#
+# Install deps (PyTorch assumed already present):
+#   pip install torch torchvision matplotlib numpy
+#
+# Run:
+#   python main.py                   # CPU, with live dashboard
+#   python main.py --device mps      # Apple Silicon GPU
+#   python main.py --no-viz          # headless (logging only)
+#   python main.py --sample-every 5  # lighter hook overhead
+
+torch
+torchvision
+matplotlib
+numpy
+streamlit
+plotly
