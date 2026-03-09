@@ -11,8 +11,7 @@ A real-time dashboard that lets you *watch* a neural network learn — loss curv
 ## The Story Behind This
 
 I didn't wake up one day and decide to build a training visualizer. It started way simpler than that.
-
-I was sitting through my machine learning coursework, staring at equations for backpropagation — chain rule, Jacobians, partial derivatives — and honestly, none of it was clicking. I could memorize the formulas, sure, but I had no intuition for what was actually happening inside the network. Like, what does it *mean* when people say "gradients vanish"? What does a dying ReLU actually look like in practice?
+I was sitting through my machine learning coursework, staring at equations for backpropagation chain rule, Jacobians, partial derivatives — and honestly, none of it was clicking. I could memorize the formulas, sure, but I had no intuition for what was actually happening inside the network. Like, what does it *mean* when people say "gradients vanish"? What does a dying ReLU actually look like in practice?
 
 The turning point was when I started training my own models. I'd kick off a training run, watch the loss number go down (hopefully), and that was it. A single number. I had no idea what was going on inside — were all the layers learning equally? Were the early layers even getting meaningful gradients? Was my model's activations healthy or slowly collapsing?
 
@@ -20,7 +19,7 @@ I started printing things. `print(grad.mean())` everywhere. Then matplotlib plot
 
 That's when the idea hit me — what if I could just hook into any PyTorch model and get a live dashboard of everything happening inside? Not just loss curves (TensorBoard does that fine), but the actual *distributions* of activations and gradients at every layer, updating in real-time as the model trains.
 
-The math started making sense once I could *see* it. The chain rule isn't just a formula — you can literally watch the gradient signal shrink as it flows backward through layers. Batch normalization isn't just "a thing you add" — you can see how it keeps activation distributions stable across training. That was the moment ML went from "memorize and apply" to "I actually get this."
+The math started making sense once I could *see* it. The chain rule isn't just a formula — you can literally watch the gradient signal shrink as it flows backward through layers. Batch normalization isn't just "a thing you add" you can see how it keeps activation distributions stable across training. That was the moment ML went from "memorize and apply" to "I actually get this."
 
 So I built this tool mostly for myself — to learn, to debug, to build intuition. If it helps someone else who's staring at backprop equations and thinking "but what does this actually look like?" then that's even better.
 
@@ -103,7 +102,7 @@ From the sidebar you can tweak:
 - **Batch size** (32, 64, 128, 256)
 - **Learning rate**
 - **Device** (cpu / mps / cuda)
-- **Hook sample interval** — record every N steps (bump this up for bigger models)
+- **Hook sample interval** record every N steps (bump this up for bigger models)
 
 ## Tech Stack
 
